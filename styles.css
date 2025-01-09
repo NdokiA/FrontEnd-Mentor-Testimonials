@@ -1,0 +1,161 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /*Primary*/
+    --moderate-violet: hsl(263, 55%, 52%);
+    --dark-gray-blue: hsl(217, 19%, 35%);
+    --dark-black-blue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+
+    /*Neutral*/
+    --light-gray: hsl(0, 0%, 81%);
+    --light-gray-blue: hsl(210, 46%, 95%);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'Barlow Semi Condensed';
+    background-color: var(--light-gray-blue)
+}
+
+.container{
+    display: grid;
+    margin: 5vw;
+    justify-content: center;
+    max-width: 70rem;
+    
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        'content1 content1 content2 content5'
+        'content3 content4 content4 content5';
+    gap: 1.5rem;
+}
+
+/* Container */
+.container [class*= 'content'] {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    border-radius: 16px;
+    padding: 2rem;
+    gap: 1rem;  
+    max-width: 1fr;
+}
+
+h2 {
+    font-weight: 600;
+}
+
+.container [class*= 'content'] p{
+    opacity: 70%;
+    line-height: 1.3em;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.background-quote{
+    align-self: flex-end;
+
+    height: 30vw;
+    max-height: 9em;
+    max-width: 9em;
+
+    z-index: -1;
+    pointer-events: none;
+
+    position: absolute;
+    top: 0em;
+
+}
+.content1{
+    grid-area: content1;
+    background-color: var(--moderate-violet);
+    color: var(--white);
+    z-index: 1;
+    position: relative;
+}
+.content1 .identity img{
+    border: solid 1px var(--light-gray);
+}
+.content2{
+    grid-area: content2;
+    background-color: var(--dark-gray-blue);
+    color: var(--white);
+}
+
+.content3{
+    grid-area: content3;
+    background-color: var(--white);
+    color: var(--dark-gray-blue);
+}
+
+.content4{
+    grid-area: content4;
+    background-color: var(--dark-black-blue);
+    color: var(--white);
+}
+
+.content4 .identity img{
+    border: solid 1px var(--moderate-violet);
+}
+
+.content5{
+    grid-area: content5;
+    background-color: var(--white);
+    color: var(--dark-gray-blue);
+}
+
+/*Profile*/
+.identity{
+    display: flex;
+    flex-direction: row;
+    gap: 1em
+}
+
+.identity img{
+    align-self: center;
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.identity h2{
+    font-size: 15px;
+}
+
+@media screen and (max-width: 850px){
+    body{
+        display: inline-block;
+    }
+    
+    .background-quote{
+        margin: 0 2em;
+
+        position: absolute;
+        top: 0em;
+        right: 0em;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 2rem 1.2rem;
+    }
+
+    .container [class*='content']{
+        max-width: auto;
+        margin: 0rem;
+    }
+}
