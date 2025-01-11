@@ -27,7 +27,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution](https://github.com/NdokiA/Frontend-Mentor-Testimonials)
-- Live Site URL: [Live Site](https://ndokia.github.io/Frontend-Mentor-Testimonials)
+- Live Site URL: [Live Site](https://ndokia.github.io/FrontEnd-Mentor-Testimonials)
 
 ## My process
 
